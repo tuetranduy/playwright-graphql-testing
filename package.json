@@ -2,7 +2,6 @@
   "name": "playwright-graphql-testing",
   "version": "1.0.0",
   "description": "Playwright framework for testing GraphQL APIs",
-  "main": "index.js",
   "scripts": {
     "test": "playwright test",
     "introspect": "graphql-codegen -r dotenv/config --config ./graphql/codegen.ts"
@@ -20,7 +19,6 @@
   },
   "dependencies": {
     "@apollo/client": "^4.0.7",
-    "graphql-request": "^6.1.0",
     "zod": "^4.1.11"
   }
 }
