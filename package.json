@@ -1,0 +1,26 @@
+{
+  "name": "playwright-graphql-testing",
+  "version": "1.0.0",
+  "description": "Playwright framework for testing GraphQL APIs",
+  "main": "index.js",
+  "scripts": {
+    "test": "playwright test",
+    "introspect": "graphql-codegen -r dotenv/config --config ./graphql/codegen.ts"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "@graphql-codegen/cli": "^5.0.0",
+    "@graphql-codegen/typescript": "^4.0.1",
+    "@graphql-codegen/typescript-operations": "^4.0.1",
+    "@playwright/test": "^1.40.1",
+    "dotenv": "^16.3.1",
+    "graphql": "^16.8.1"
+  },
+  "dependencies": {
+    "@apollo/client": "^4.0.7",
+    "graphql-request": "^6.1.0",
+    "zod": "^4.1.11"
+  }
+}
