@@ -9,3 +9,10 @@ export const GET_PRODUCTS = gql(`query GetProducts {
     }
   }
 }`)
+
+export const GET_PRODUCT_BY_ID = gql(`query GetProduct($id: ID!) {
+  product(where: {id: $id}) {
+    name
+    price
+  }
+}`)

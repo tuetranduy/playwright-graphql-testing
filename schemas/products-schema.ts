@@ -15,3 +15,12 @@ export const productsResponseSchema = z.object({
         ),
     }),
 });
+
+export const productResponseSchema = z.object({
+    data: z.object({
+        product: z.object({
+            name: z.string(),
+            price: z.number(),
+        })
+    }),
+});
