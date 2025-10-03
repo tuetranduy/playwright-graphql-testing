@@ -1,0 +1,16 @@
+{
+    "id": "cc5a5c02-8f65-43e6-904d-8302f55696af",
+    "title": "GraphQL 101",
+    "body": "This is how to use GraphQL...",
+    "author": {
+        "id": "6dd07b0f-9c74-4445-9e1e-974b7db21d28",
+        "name": "Andrew",
+        "email": "andrew@example.com"
+    },
+    "comments": [
+        {
+            "id": "dfbdee4c-ba4c-45f5-9c46-04e96d356a0c",
+            "text": "Thanks! Super useful post."
+        }
+    ]
+}

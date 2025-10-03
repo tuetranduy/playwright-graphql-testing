@@ -14,9 +14,13 @@ import { TypedDocumentNode as DocumentNode } from '@graphql-typed-document-node/
  * Learn more about it here: https://the-guild.dev/graphql/codegen/plugins/presets/preset-client#reducing-bundle-size
  */
 type Documents = {
+    "query GetPosts {\n  posts {\n    id\n    title\n    body\n    author {\n      id\n      name\n      email\n    }\n    comments {\n      id\n      text\n    }\n  }\n}": typeof types.GetPostsDocument,
+    "query GetPostById($id: ID!) {\n  post(id: $id) {\n    id\n    title\n    body\n    author {\n      id\n      name\n      email\n    }\n    comments {\n      id\n      text\n    }\n  }\n}": typeof types.GetPostByIdDocument,
     "query GetUsers {\n  users {\n    id\n    name\n    email\n    posts {\n      title\n    }\n    comments {\n      text\n    }\n  }\n}": typeof types.GetUsersDocument,
 };
 const documents: Documents = {
+    "query GetPosts {\n  posts {\n    id\n    title\n    body\n    author {\n      id\n      name\n      email\n    }\n    comments {\n      id\n      text\n    }\n  }\n}": types.GetPostsDocument,
+    "query GetPostById($id: ID!) {\n  post(id: $id) {\n    id\n    title\n    body\n    author {\n      id\n      name\n      email\n    }\n    comments {\n      id\n      text\n    }\n  }\n}": types.GetPostByIdDocument,
     "query GetUsers {\n  users {\n    id\n    name\n    email\n    posts {\n      title\n    }\n    comments {\n      text\n    }\n  }\n}": types.GetUsersDocument,
 };
 
@@ -34,6 +38,14 @@ const documents: Documents = {
  */
 export function gql(source: string): unknown;
 
+/**
+ * The gql function is used to parse GraphQL queries into a document that can be used by GraphQL clients.
+ */
+export function gql(source: "query GetPosts {\n  posts {\n    id\n    title\n    body\n    author {\n      id\n      name\n      email\n    }\n    comments {\n      id\n      text\n    }\n  }\n}"): (typeof documents)["query GetPosts {\n  posts {\n    id\n    title\n    body\n    author {\n      id\n      name\n      email\n    }\n    comments {\n      id\n      text\n    }\n  }\n}"];
+/**
+ * The gql function is used to parse GraphQL queries into a document that can be used by GraphQL clients.
+ */
+export function gql(source: "query GetPostById($id: ID!) {\n  post(id: $id) {\n    id\n    title\n    body\n    author {\n      id\n      name\n      email\n    }\n    comments {\n      id\n      text\n    }\n  }\n}"): (typeof documents)["query GetPostById($id: ID!) {\n  post(id: $id) {\n    id\n    title\n    body\n    author {\n      id\n      name\n      email\n    }\n    comments {\n      id\n      text\n    }\n  }\n}"];
 /**
  * The gql function is used to parse GraphQL queries into a document that can be used by GraphQL clients.
  */
