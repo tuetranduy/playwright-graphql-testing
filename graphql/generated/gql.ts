@@ -14,12 +14,10 @@ import { TypedDocumentNode as DocumentNode } from '@graphql-typed-document-node/
  * Learn more about it here: https://the-guild.dev/graphql/codegen/plugins/presets/preset-client#reducing-bundle-size
  */
 type Documents = {
-    "query GetProducts {\n  products{\n    name\n    price\n    categories {\n      name\n    }\n  }\n}": typeof types.GetProductsDocument,
-    "query GetProduct($id: ID!) {\n  product(where: {id: $id}) {\n    name\n    price\n  }\n}": typeof types.GetProductDocument,
+    "query GetUsers {\n  users {\n    id\n    name\n    email\n    posts {\n      title\n    }\n    comments {\n      text\n    }\n  }\n}": typeof types.GetUsersDocument,
 };
 const documents: Documents = {
-    "query GetProducts {\n  products{\n    name\n    price\n    categories {\n      name\n    }\n  }\n}": types.GetProductsDocument,
-    "query GetProduct($id: ID!) {\n  product(where: {id: $id}) {\n    name\n    price\n  }\n}": types.GetProductDocument,
+    "query GetUsers {\n  users {\n    id\n    name\n    email\n    posts {\n      title\n    }\n    comments {\n      text\n    }\n  }\n}": types.GetUsersDocument,
 };
 
 /**
@@ -39,11 +37,7 @@ export function gql(source: string): unknown;
 /**
  * The gql function is used to parse GraphQL queries into a document that can be used by GraphQL clients.
  */
-export function gql(source: "query GetProducts {\n  products{\n    name\n    price\n    categories {\n      name\n    }\n  }\n}"): (typeof documents)["query GetProducts {\n  products{\n    name\n    price\n    categories {\n      name\n    }\n  }\n}"];
-/**
- * The gql function is used to parse GraphQL queries into a document that can be used by GraphQL clients.
- */
-export function gql(source: "query GetProduct($id: ID!) {\n  product(where: {id: $id}) {\n    name\n    price\n  }\n}"): (typeof documents)["query GetProduct($id: ID!) {\n  product(where: {id: $id}) {\n    name\n    price\n  }\n}"];
+export function gql(source: "query GetUsers {\n  users {\n    id\n    name\n    email\n    posts {\n      title\n    }\n    comments {\n      text\n    }\n  }\n}"): (typeof documents)["query GetUsers {\n  users {\n    id\n    name\n    email\n    posts {\n      title\n    }\n    comments {\n      text\n    }\n  }\n}"];
 
 export function gql(source: string) {
   return (documents as any)[source] ?? {};
